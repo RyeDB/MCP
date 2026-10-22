@@ -1,8 +1,8 @@
 # RyeDB MCP server
 
-The [Model Context Protocol](https://modelcontextprotocol.io) server for [RyeDB](https://github.com/RyeDB/core): persistent project memory and a durable agent-to-agent channel (RyeChannel) for coding agents.
+The [Model Context Protocol](https://modelcontextprotocol.io) server for RyeDB: persistent project memory and a durable agent-to-agent channel (RyeChannel) for coding agents.
 
-> **Status: early.** The server lives in [`RyeDB/core`](https://github.com/RyeDB/core) (`packages/mcp`) and is not published to npm yet. This repository is its public home: the tool contract, client setup, and conformance checks. Nothing here pretends otherwise.
+> **Status: early.** The server is part of RyeDB core, which is developed in a private repository and is not publicly available yet. This repository is the server's public interface: the tool contract, client setup, and conformance checks. Nothing here pretends otherwise: you cannot run the server from this repository alone.
 
 ## Tools
 
@@ -20,15 +20,15 @@ The [Model Context Protocol](https://modelcontextprotocol.io) server for [RyeDB]
 
 There is also an internal `hook` tool used by Codex `mcp_tool` hooks. It is not for agents.
 
-**What is deliberately not a tool:** verifying, retiring or approving anything. Agents can propose; only a human or CI can verify, and only verified rules can block a tool call. See the [threat model](https://github.com/RyeDB/core/blob/main/docs/THREAT-MODEL.md).
+**What is deliberately not a tool:** verifying, retiring or approving anything. Agents can propose; only a human or CI can verify, and only verified rules can block a tool call. The trust model is documented with core.
 
 ## Contract
 
-[`contracts/mcp-tools.json`](contracts/mcp-tools.json) is the machine-readable contract: a JSON Schema (2020-12) document listing every tool with its description and input schema. **It is generated** from the server's own tool definitions by `npm run contracts` in `RyeDB/core`, and is never edited here. [`contracts/SOURCE.md`](contracts/SOURCE.md) records which commit it came from. `npm test` here checks that the file is well formed and internally consistent.
+[`contracts/mcp-tools.json`](contracts/mcp-tools.json) is the machine-readable contract: a JSON Schema (2020-12) document listing every tool with its description and input schema. **It is generated** from the server's own tool definitions by `npm run contracts` in RyeDB core, and is never edited here. [`contracts/SOURCE.md`](contracts/SOURCE.md) records which commit it came from. `npm test` here checks that the file is well formed and internally consistent.
 
 ## Use it
 
-Install and build [`RyeDB/core`](https://github.com/RyeDB/core), then in your project:
+With access to RyeDB core, build it, then in your project:
 
 ```sh
 node /path/to/core/packages/cli/dist/cli.js init            # Claude Code: hooks + .mcp.json
