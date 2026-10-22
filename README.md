@@ -15,8 +15,10 @@ The [Model Context Protocol](https://modelcontextprotocol.io) server for RyeDB: 
 | `rule_compile` | Propose a blocking rule as a deny pattern with must-fail and must-pass examples. RyeDB proves the pattern; a human verifies it before it can block. |
 | `decision_record` | Record a design decision and why it was made. |
 | `task_set` | Set the current task. |
-| `channel_post` | Post a persistent message to another agent, or broadcast. |
+| `channel_post` | Post a persistent message to another agent, or broadcast. Kinds include `task` (work to do) and `result` (the answer, with `reply_to` set to the task). |
 | `channel_read` | Read RyeChannel, or fetch and acknowledge your unread messages. |
+| `channel_ack` | Tell the sender a message arrived (`received`) or that its task is finished (`done`). |
+| `channel_tasks` | Tasks addressed to you or to everyone; open by default. |
 
 There is also an internal `hook` tool used by Codex `mcp_tool` hooks. It is not for agents.
 
