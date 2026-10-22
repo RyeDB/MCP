@@ -226,6 +226,7 @@
                 "enum": [
                   "note",
                   "request",
+                  "task",
                   "result",
                   "decision",
                   "handoff"
@@ -233,6 +234,53 @@
               },
               "reply_to": {
                 "type": "number"
+              },
+              "agent": {
+                "type": "string",
+                "description": "Your role name, e.g. 'main' or 'reviewer'. Self-declared."
+              }
+            }
+          }
+        },
+        {
+          "name": "channel_ack",
+          "description": "RyeChannel: tell the sender a message arrived (state received) or that the task it asked for is finished (state done). Idempotent. A task is also done when a result message replies to it.",
+          "inputSchema": {
+            "type": "object",
+            "required": [
+              "seq"
+            ],
+            "properties": {
+              "seq": {
+                "type": "number"
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "received",
+                  "done"
+                ]
+              },
+              "agent": {
+                "type": "string",
+                "description": "Your role name, e.g. 'main' or 'reviewer'. Self-declared."
+              }
+            }
+          }
+        },
+        {
+          "name": "channel_tasks",
+          "description": "RyeChannel: tasks (messages of kind task) addressed to you or to everyone, open by default. Answer one with channel_post kind result and reply_to set to its seq.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "state": {
+                "type": "string",
+                "enum": [
+                  "open",
+                  "done",
+                  "all"
+                ]
               },
               "agent": {
                 "type": "string",
