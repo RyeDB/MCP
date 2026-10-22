@@ -63,4 +63,4 @@ Claude Code 2.1.307 and 2.1.308, and Codex CLI 0.163.0, both against the real bi
 npm test    # validates contracts/mcp-tools.json
 ```
 
-Requires Node 22.18 or newer. Licensed under Apache-2.0.
+Requires Node 22.18 or newer. Copyright (c) 2026 RyeDB. Licensed under Apache-2.0 ([NOTICE](NOTICE)).
