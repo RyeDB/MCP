@@ -4,7 +4,7 @@ Only Claude Code and Codex have been tested.
 
 ## Claude Code
 
-`ryedb init` (from `RyeDB/core`) writes `.claude/settings.local.json` with hooks and `.mcp.json` with this server. Claude Code asks you to approve a project MCP server the first time. Hooks are read when a session starts: **restart the session after `init`**.
+`ryedb init` (from RyeDB core) writes `.claude/settings.local.json` with hooks and `.mcp.json` with this server. Claude Code asks you to approve a project MCP server the first time. Hooks are read when a session starts: **restart the session after `init`**.
 
 ## Codex
 
