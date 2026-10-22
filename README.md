@@ -1,6 +1,6 @@
-# RyeDB MCP server
+# RyeDB™ MCP server
 
-The [Model Context Protocol](https://modelcontextprotocol.io) server for RyeDB: persistent project memory and a durable agent-to-agent channel (RyeChannel) for coding agents.
+The [Model Context Protocol](https://modelcontextprotocol.io) server for RyeDB™: persistent project memory and a durable agent-to-agent channel (RyeChannel) for coding agents.
 
 > **Status: early.** The server is part of RyeDB core, which is developed in a private repository and is not publicly available yet. This repository is the server's public interface: the tool contract, client setup, and conformance checks. Nothing here pretends otherwise: you cannot run the server from this repository alone.
 
@@ -64,3 +64,7 @@ npm test    # validates contracts/mcp-tools.json
 ```
 
 Requires Node 22.18 or newer. Copyright (c) 2026 RyeDB. Licensed under Apache-2.0 ([NOTICE](NOTICE)).
+
+---
+
+RyeDB™ is a trademark of RyeDB. The Apache-2.0 licence covers the code; it does not grant permission to use the name or logo (section 6).
