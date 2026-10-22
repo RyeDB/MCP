@@ -89,6 +89,13 @@
                 "type": "string",
                 "description": "glob, e.g. src/gen/**"
               },
+              "about": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Project files this is about (relative paths). When they change, the note is flagged as possibly stale. Paths mentioned in the text are picked up automatically."
+              },
               "agent": {
                 "type": "string",
                 "description": "Your role name, e.g. 'main' or 'reviewer'. Self-declared."
@@ -133,6 +140,13 @@
                 "type": "string",
                 "description": "glob limiting file rules, e.g. src/gen/**"
               },
+              "about": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Project files this is about (relative paths). When they change, the note is flagged as possibly stale. Paths mentioned in the text are picked up automatically."
+              },
               "agent": {
                 "type": "string",
                 "description": "Your role name, e.g. 'main' or 'reviewer'. Self-declared."
@@ -155,6 +169,13 @@
               },
               "rationale": {
                 "type": "string"
+              },
+              "about": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Project files this is about (relative paths). When they change, the note is flagged as possibly stale. Paths mentioned in the text are picked up automatically."
               },
               "agent": {
                 "type": "string",
